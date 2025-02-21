@@ -12,6 +12,10 @@ import (
 
 var projectId = os.Getenv("PROJECT_ID")
 
+// RetrieveSecret retrieves the secret from the secret manager.
+// The secret is identified by the secret name.
+// The PROJECT_ID environment variable must be set to the
+// project id of the project where the secret is stored.
 func RetrieveSecret(secretName string) (string, error) {
 	if projectId == "" {
 		slog.Error("PROJECT_ID environment variable not set")
